@@ -13,6 +13,10 @@ router.post("/login", usuarioController.login)
 // Rota de saida
 router.get("/logout", usuarioController.logout)
 
+// Rota de cadastro de usuario
+// O multer, salva a imagem primeiro, através do upload.single, depois chama o controller
+router.post('/cadastrar', upload.single('foto'), usuarioController.cadastrar)
+
 // ROTAS PRIVADAS
 
 // Obtém a lista de usuários
